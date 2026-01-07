@@ -13,6 +13,7 @@ import { Loader2, X } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useMySkills, useCreateSkill, useDeleteSkill, useUpdateUser, useCreditBalance, useSessions } from "@/hooks/useApi";
 import { useToast } from "@/hooks/use-toast";
+import AIAdvisor from "./AIAdvisor";
 
 const Profile = () => {
   const { user, refreshUser } = useAuth();
@@ -117,9 +118,10 @@ const Profile = () => {
         </div>
 
         <Tabs defaultValue="profile" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-5">
             <TabsTrigger value="profile">Profile</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="advisor">AI Career Advisor</TabsTrigger>
             <TabsTrigger value="availability">Availability</TabsTrigger>
             <TabsTrigger value="preferences">Preferences</TabsTrigger>
           </TabsList>
@@ -380,6 +382,9 @@ const Profile = () => {
                 <Button variant="indigo">Save Preferences</Button>
               </CardContent>
             </Card>
+          </TabsContent>
+          <TabsContent value="advisor" className="space-y-6">
+            <AIAdvisor />
           </TabsContent>
         </Tabs>
       </div>
