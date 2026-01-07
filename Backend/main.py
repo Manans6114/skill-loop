@@ -36,6 +36,7 @@ app.add_middleware(
         "http://localhost:5173",  # Vite default
         "http://localhost:8080",
         "http://127.0.0.1:5173",
+        "https://skill-loop-v1.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
